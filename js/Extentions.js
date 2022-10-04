@@ -44,3 +44,7 @@ const showLoading = () => {
 const removeLoading = () => {
     loading.style.display = "none";
 }
+
+const postErrorLog = (location, errorText, funcName, statusCode) => {
+    //ajax post
+}
