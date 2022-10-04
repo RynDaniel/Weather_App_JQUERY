@@ -109,17 +109,45 @@ const getWeatherDataFromApi = async () => {
 
             //append vs. prepend both in JS AND JQUERY
             listJQ.prepend(createdLi);
+
+            //Jquery Samples
+            // $(".city img").click((e)=>{
+            //     //getAttribute, setAttribute ==> attr
+            //     window.location.href = $(e.target).attr("src");
+            //     //$(e.target).attr("src", iconUrlAWS);
+            // });
+
+            //Animation
+            // $(".city").click((e)=>{
+            //     $(e.target).animate({left:'250px'});
+            // });
+
+            //Jquery chaining slideUp vs. slideDown
+            $(".city img").click((e) => {
+                $(e.target).slideUp(2000).slideDown(2000);
+            });
+
+            //hide() vs show()
+            // $(".city img").click((e) => {
+            //     $(e.target).hide();
+            // });
+
             //formJS.reset();
             formJquery.trigger("reset");
 
         },
         beforeSend: (request) => {
+            //Encryption
+            //header/body
+            //token
             console.log("before ajax send");
         },
         complete: () => {
             console.log("after ajax send");
         },
         error: (XMLHttpRequest) => {
+            //logging
+            //postErrorLog(p1,p2,p3,p4);
             console.log(XMLHttpRequest);
             msgJQ.text(`${XMLHttpRequest.status} ${XMLHttpRequest.statusText}`);
             //styling
